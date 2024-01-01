@@ -85,7 +85,7 @@ switch Operation
         %Population = Input;
         %[ps,D] = size(Population);
         
-        Population = 0.0 * ones(1, D)
+        Population = 0.0 * ones(1, D);
         [ps,D] = size(Population);
 
         % variable linkages
