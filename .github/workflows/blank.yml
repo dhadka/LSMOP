@@ -18,10 +18,10 @@ jobs:
         uses: matlab-actions/setup-matlab@v1
 
       - name: Test 2
-        run: matlab -batch "Population = LSMOP('init', 'LSMOP5', 2, 10); LSMOP('fitness', 'LSMOP5', 2, Population);"
+        run: matlab -batch "Population = LSMOP('init', 'LSMOP9', 2, 10); LSMOP('fitness', 'LSMOP9', 2, Population);"
 
       - name: Test 3
-        run: matlab -batch "Population = LSMOP('init', 'LSMOP5', 3, 10); LSMOP('fitness', 'LSMOP5', 3, Population);"
+        run: matlab -batch "Population = LSMOP('init', 'LSMOP9', 3, 10); LSMOP('fitness', 'LSMOP9', 3, Population);"
 
       - name: Test 4
-        run: matlab -batch "Population = LSMOP('init', 'LSMOP5', 4, 10); LSMOP('fitness', 'LSMOP5', 4, Population);"
+        run: matlab -batch "Population = LSMOP('init', 'LSMOP9', 4, 10); LSMOP('fitness', 'LSMOP9', 4, Population);"
