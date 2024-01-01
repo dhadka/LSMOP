@@ -221,6 +221,10 @@ switch Operation
                     end;
             end
         end
+
+        disp('F');
+        disp(F);
+        
         Output = F;
         
         % true Pareto front (f)
