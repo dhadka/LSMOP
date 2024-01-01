@@ -28,7 +28,7 @@ function [Output,Boundary] = LSMOP(Operation,Problem,M,Input)
 %%        if Operation is 'PF' or 'PS', Input is the sample size
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+format long
 
 % global variables
 persistent N_k N_ns La Lb Aa Ab Ac NNg D;
