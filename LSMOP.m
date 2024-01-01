@@ -190,6 +190,9 @@ switch Operation
             end;
         end;
         G = G/N_k;
+
+        disp('G');
+        disp(G);
         
         %objective values
         F = zeros(ps, M);
