@@ -163,6 +163,9 @@ switch Operation
         end;
         G = G/N_k;
 
+        disp('G')
+        disp(G)
+
         %objective values
         F = zeros(ps, M);
         for i = 1 : M
