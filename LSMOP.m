@@ -65,7 +65,9 @@ switch Operation
         N_ns = sum(NNg)*N_k;
         D = (M - 1) + N_ns;
 
+        disp('N_ns');
         disp(N_ns);
+        disp('D');
         disp(D);
         
         % boundaries of decision variables
@@ -97,8 +99,13 @@ switch Operation
         
         % fitness evaluation
     case 'fitness'
-        Population = Input;
-        [ps,D] = size(Population);
+        %Population = Input;
+        %[ps,D] = size(Population);
+        Population = zeros(1, D)
+
+        disp('Population (before linkage)')
+        disp(Population)
+        
         % variable linkages
         switch Problem
             case {'LSMOP1','LSMOP2', 'LSMOP3','LSMOP4'}
@@ -108,6 +115,9 @@ switch Operation
                 % non-linear linkage
                 Population(:,M:end) = Population(:,M:end).*(repmat(Lb,ps,1)) - 10*repmat(Population(:,1), [1 D - M + 1]);
         end;
+
+        disp('Population (after linkage)')
+        disp(Population)
         
         % non-uniform decision vairable groups
         Xf = Population(:,1:M - 1); % decision variables defining H(x)
