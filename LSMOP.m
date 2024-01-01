@@ -108,7 +108,7 @@ switch Operation
                 idx_xs1 = M;
             end;
             idx_xs2 = idx_xs1 + N_k*NNg(i) - 1;
-            Xs{i} = Population(:, idx_xs1 : idx_xs2);d
+            Xs{i} = Population(:, idx_xs1 : idx_xs2);
         end;
         
         % basic single-objective functions
