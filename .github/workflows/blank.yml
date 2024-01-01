@@ -29,3 +29,11 @@ jobs:
 
       - name: Test 4
         run: matlab -batch "Population = LSMOP('init', '${{ matrix.problem }}', 4, 10); LSMOP('fitness', '${{ matrix.problem }}', 4, Population);"
+
+      - name: PS
+        run: matlab -batch "PF = LSMOP('PF', '${{ matrix.problem }}', 2, 100); writematrix(PF,'${{ matrix.problem }}.2D.pf','Delimiter',' ');"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PF
+          path: '*.pf'
