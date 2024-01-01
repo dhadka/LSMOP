@@ -85,7 +85,7 @@ switch Operation
         %Population = Input;
         %[ps,D] = size(Population);
         
-        Population = 0.0 * ones(1, D);
+        Population = 1.0 * ones(1, D);
         [ps,D] = size(Population);
 
         % variable linkages
@@ -162,9 +162,6 @@ switch Operation
             end;
         end;
         G = G/N_k;
-
-        disp('G')
-        disp(G)
 
         %objective values
         F = zeros(ps, M);
