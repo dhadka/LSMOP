@@ -132,6 +132,9 @@ switch Operation
             end;
             idx_xs2 = idx_xs1 + N_k*NNg(i) - 1;
             Xs{i} = Population(:, idx_xs1 : idx_xs2);
+
+            disp('Xsi');
+            disp(Xs{i});
         end;
         
         % basic single-objective functions
