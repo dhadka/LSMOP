@@ -50,22 +50,37 @@ switch Operation
             c = chaos(c);
             C = [C,c];
         end
+
+        disp('C');
+        disp(C);
         
         % non-uniform subcomponent sizes (N_k subcomponents in each decision variable group)
         NNg = round(C(1:M)/sum(C(1:M))*N_ns);
         NNg = ceil(NNg/N_k);
+
+        disp('NNg');
+        disp(NNg);
         
         % number of decision variables
         N_ns = sum(NNg)*N_k;
         D = (M - 1) + N_ns;
+
+        disp(N_ns);
+        disp(D);
         
         % boundaries of decision variables
         lu = [zeros(1,M - 1), 0*ones(1,D - M + 1); ones(1,M - 1), 10*ones(1,D - M + 1)];
         Boundary = [lu(2,:); lu(1,:)];
+
+        disp('Boundary');
+        disp(Boundary)
         
         % variable linkage function
         La = 1 + [M:D]/D;
         Lb = 1 + cos(0.5*pi*[M:D]/D);
+
+        disp('La');
+        disp(La);
         
         % correlation matrix
         Aa = eye(M); %indepdent correlation
