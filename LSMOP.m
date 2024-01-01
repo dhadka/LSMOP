@@ -101,7 +101,9 @@ switch Operation
     case 'fitness'
         %Population = Input;
         %[ps,D] = size(Population);
+        
         Population = zeros(1, D)
+        [ps,D] = size(Population);
 
         disp('Population (before linkage)')
         disp(Population)
