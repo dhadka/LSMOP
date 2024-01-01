@@ -134,6 +134,8 @@ switch Operation
             Xs{i} = Population(:, idx_xs1 : idx_xs2);
 
             disp('Xsi');
+            disp(idx_xs1);
+            disp(idx_xs2);
             disp(Xs{i});
         end;
         
