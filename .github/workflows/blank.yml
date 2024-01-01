@@ -31,7 +31,7 @@ jobs:
         run: matlab -batch "Population = LSMOP('init', '${{ matrix.problem }}', 4, 10); LSMOP('fitness', '${{ matrix.problem }}', 4, Population);"
 
       - name: PS
-        run: matlab -batch "PF = LSMOP('PF', '${{ matrix.problem }}', 2, 100); writematrix(PF,'${{ matrix.problem }}.2D.pf','Delimiter',' ');"
+        run: matlab -batch "PF = LSMOP('PF', '${{ matrix.problem }}', 2, 100); writematrix(PF,'${{ matrix.problem }}.2D.pf','Delimiter',' ','FileType','text');"
 
       - uses: actions/upload-artifact@v4
         with:
