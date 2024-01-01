@@ -19,4 +19,4 @@ jobs:
 
       - name: Test
         run: |
-          matlab -batch "LSMOP('init', 'LSMOP1', 2, 10)"
+          matlab -batch "Population = LSMOP('init', 'LSMOP1', 2, 10); LSMOP('fitness', 'LSMOP1', 2, Population);"
