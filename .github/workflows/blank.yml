@@ -11,6 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        problem: [LSMOP1, LSMOP2, LSMOP3, LSMOP4, LSMOP5, LSMOP6, LSMOP7, LSMOP8, LSMOP8]
+
     steps:
       - uses: actions/checkout@v3
 
@@ -18,10 +22,10 @@ jobs:
         uses: matlab-actions/setup-matlab@v1
 
       - name: Test 2
-        run: matlab -batch "Population = LSMOP('init', 'LSMOP9', 2, 10); LSMOP('fitness', 'LSMOP9', 2, Population);"
+        run: matlab -batch "Population = LSMOP('init', '${{ matrix.problem }}', 2, 10); LSMOP('fitness', '${{ matrix.problem }}', 2, Population);"
 
       - name: Test 3
-        run: matlab -batch "Population = LSMOP('init', 'LSMOP9', 3, 10); LSMOP('fitness', 'LSMOP9', 3, Population);"
+        run: matlab -batch "Population = LSMOP('init', '${{ matrix.problem }}', 3, 10); LSMOP('fitness', '${{ matrix.problem }}', 3, Population);"
 
       - name: Test 4
-        run: matlab -batch "Population = LSMOP('init', 'LSMOP9', 4, 10); LSMOP('fitness', 'LSMOP9', 4, Population);"
+        run: matlab -batch "Population = LSMOP('init', '${{ matrix.problem }}', 4, 10); LSMOP('fitness', '${{ matrix.problem }}', 4, Population);"
